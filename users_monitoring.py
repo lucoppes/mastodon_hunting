@@ -78,10 +78,7 @@ def get_monitored_user_ids(limit=10):
     session = SessionLocal()
     users = session.query(MonitoredUser.acct).limit(limit).all()
     session.close()
-    users_list = ['likethecoins@infosec.exchange', 'vulnerability_lookup@social.circl.lu', 'NickAEsp@mastodon.social', 'Ransomlook@social.circl.lu', 'RedPacketSecurity@mastodon.social', 'certvde@infosec.exchange', 'urldna@infosec.exchange', 'fr@pubeurope.com', 'us@pubeurope.com', 'uk@pubeurope.com', 'CCINL', '0x58', 'Hackread', 'CuratedHackerNews', 'RedPacketSecurity']
-    return users_list
-
-    # return [u[0] for u in users]
+    return [u[0] for u in users]
 
 def stream_for_user(username, max_retries=2):
     retries = 0
@@ -95,7 +92,7 @@ def stream_for_user(username, max_retries=2):
             )
             listener = UserListener(username)
             mastodon.stream_user(listener)
-            #print(f"Listening user {username}")
+
         except Exception as e:
             retries += 1
             wait_time = 2 * retries

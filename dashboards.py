@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine, func
-from config.database import Post, Hashtag, post_hashtag
+from config.database import Post, Hashtag, post_hashtag, MonitoredUser
 
 engine = create_engine('sqlite:///./mastodon.db')
 Session = sessionmaker(bind=engine)
@@ -20,7 +20,6 @@ post_data = [
         "User": p.user,
         "Content": p.content,
         "URL": p.url,
-        "Source": p.source,
         "Hashtags": ", ".join(h.name for h in p.hashtags)
     }
     for p in posts
@@ -43,8 +42,9 @@ st.bar_chart(hashtag_df.set_index("Hashtag"))
 
 st.subheader("👤 Most active users")
 user_counts = (
-    session.query(Post.user, func.count(Post.id))
-    .group_by(Post.user)
+    session.query(MonitoredUser.acct, func.count(Post.id))
+    .join(Post, Post.user == MonitoredUser.id)
+    .group_by(MonitoredUser.acct)
     .order_by(func.count(Post.id).desc())
     .limit(10)
     .all()
