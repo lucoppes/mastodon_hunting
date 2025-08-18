@@ -40,8 +40,8 @@ class Hashtag(Base):
 class MonitoredUser(Base):
     __tablename__ = 'monitored_users'
 
-    id = Column(Integer, primary_key=True)  # Este debe ser el Mastodon user ID real
-    acct = Column(String, unique=True, nullable=False)  # Ej: nombre@serv
+    id = Column(Integer, primary_key=True)
+    acct = Column(String, unique=True, nullable=False)
 
     posts = relationship("Post", back_populates="monitored_user")
 
