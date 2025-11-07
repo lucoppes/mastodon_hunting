@@ -62,7 +62,7 @@ media/
 *.lock
 
 # Secrets
-*.env*
+env/*
 
 # Docker
 *.pid
