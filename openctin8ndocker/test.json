@@ -1,0 +1,13 @@
+[
+    {
+        "query": {
+            "api_url": "http://optencti:8080/",
+            "api_token": "3a5de77a-7a21-11f0-add4-dfa602df585b",
+            "stix_json":  "{\n  \"type\": \"bundle\",\n  \"id\": \"bundle--2c6a0c20-a7d5-4a5c-8d1e-2b3f4a5c6d7e\",\n  \"spec_version\": \"2.1\",\n  \"objects\": [\n    {\n      \"type\": \"identity\",\n      \"spec_version\": \"2.1\",\n      \"id\": \"identity--8c73456c-7e61-4191-9e8a-0d8677c7f763\",\n      \"created\": \"2025-08-12T00:00:05.421Z\",\n      \"modified\": \"2025-08-12T00:00:05.421Z\",\n      \"name\": \"Security Analyst Agent\",\n      \"identity_class\": \"system\",\n      \"description\": \"Automated system performing security analysis.\"\n    },\n    {\n      \"type\": \"marking-definition\",\n      \"spec_version\": \"2.1\",\n      \"id\": \"marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9\",\n      \"created\": \"2014-04-07T20:00:00.000Z\",\n      \"definition_type\": \"tlp\",\n      \"definition\": {\n        \"tlp\": \"white\"\n      }\n    },\n    {\n      \"type\": \"indicator\",\n      \"spec_version\": \"2.1\",\n      \"id\": \"indicator--e8f9d0c1-b2a3-4b5c-6d7e-8f9a0b1c2d3e\",\n      \"created\": \"2023-10-27T11:35:00.000Z\",\n      \"modified\": \"2023-10-27T11:35:00.000Z\",\n      \"pattern\": \"[ipv4-addr:value = '39.101.74.162']\",\n      \"pattern_type\": \"stix\",\n      \"valid_from\": \"2023-10-27T11:35:00.000Z\",\n      \"indicator_types\": [\"malicious-activity\"],\n      \"name\": \"Cobalt Strike Beacon IP\",\n      \"description\": \"Observed IP address associated with a Cobalt Strike Beacon.\",\n      \"marking_ref\": \"marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9\",\n      \"object_refs\": [\"ipv4-addr--a7b8c9d0-e1f2-3a4b-5c6d-7e8f9a0b1c2d\"]\n    },\n    {\n      \"type\": \"ipv4-addr\",\n      \"spec_version\": \"2.1\",\n      \"id\": \"ipv4-addr--a7b8c9d0-e1f2-3a4b-5c6d-7e8f9a0b1c2d\",\n      \"value\": \"39.101.74.162\"\n    }\n  ]\n}"
+        },
+        "tool": {
+            "name": "stix_importer",
+            "description": "Load a STIX JSON string into OpenCTI."
+        }
+    }
+]

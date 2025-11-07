@@ -1,2 +1,103 @@
+*.iml
 .env
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Distribution / packaging
+.Python
+dist/
+build/
+.eggs/
+*.egg-info/
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Test and coverage
+.coverage
+.coverage.*
+.cache/
+.pytest_cache/
+.mypy_cache/
+.tox/
+
+# IDEs and editors
+.vscode/
 .idea/
+*.swp
+*.bak
+*.tmp
+.DS_Store
+
+# Logs
+*.log
+
+# Databases
+*.sqlite3
+*.db
+
+# Misc
+*.pot
+*.mo
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Static and media
+staticfiles/
+media/
+
+# Other
+*.manifest
+*.spec
+*.lock
+
+# Secrets
+env/*
+
+# Docker
+*.pid
+*.pidfile
+*.sock
+
+# Data files
+*.csv
+*.tsv
+*.dat
+*.pkl
+*.joblib
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.pb
+*.tflite
+*.onnx
+*.model
+*.weights
+*.params
+
+# Archives
+*.zip
+*.tar
+*.gz
+*.tgz
+*.bz2
+*.xz
+*.7z
+
+# Node (if present)
+node_modules/
+npm-debug.log*

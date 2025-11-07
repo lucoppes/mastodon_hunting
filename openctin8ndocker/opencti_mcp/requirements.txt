@@ -1,0 +1,2 @@
+fastmcp
+pycti==6.7.11
